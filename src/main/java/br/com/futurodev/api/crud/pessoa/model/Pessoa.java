@@ -1,5 +1,7 @@
 package br.com.futurodev.api.crud.pessoa.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
@@ -14,9 +16,11 @@ public class Pessoa {
 
     private String nome;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
 
+    @JsonFormat(pattern = "HH:mm:ss")
     @Temporal(TemporalType.TIME)
     private Date horaNascimento;
 
